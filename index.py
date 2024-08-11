@@ -118,7 +118,6 @@ r=IntVar()
 # conn = sqlite3.connect("BMIData.db")
 # c= conn.cursor()
 # c.execute("CREATE TABLE users(first_name TEXT,last_name TEXT, heigth INT, weigth INT,BMI INT , value INT)")
-# # tkMessageBox.showinfo("Information","Your details is save !")
 # conn.commit()
 # conn.close()
 
@@ -149,10 +148,13 @@ heigthentry = Entry(root,width=40)
 heigthentry.grid(row=6,column=2,pady=10)
 
 btn =Button(root,text="Calculate",width=30,command=cal)
-btn.grid(row=9,column=1,columnspan=2)
+btn.grid(row=9,column=1)
 
-show =Button(root,text="Show",width=30,command=show)
-show.place(x=150, y=300)
+btn =Button(root,text="Calculate",width=30,command=reset)
+btn.grid(row=9,column=2)
+
+show =Button(root,text="Show All Records",width=30,command=show)
+show.place(x=150, y=470)
 
 
 
