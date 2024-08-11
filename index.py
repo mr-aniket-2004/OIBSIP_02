@@ -45,6 +45,9 @@ def cal():
     conn.commit()
     conn.close()
     
+
+
+    
 def show():
     new =Tk()
     new.title("BMI CALCULATOR HISTOR")
@@ -70,6 +73,12 @@ def show():
 
     row = Label(new, text="STATUS",font=" time 10 bold")
     row.grid(row=2,column=6)
+
+    # this is quary for delete the rows
+
+   
+
+
     conn = sqlite3.connect("BMIData.db")
     c= conn.cursor()
     c.execute("SELECT * FROM users")
@@ -108,7 +117,7 @@ r=IntVar()
 
 # conn = sqlite3.connect("BMIData.db")
 # c= conn.cursor()
-# c.execute("CREATE TABLE users(first_name TEXT,last_name TEXT, heigth INT, weigth INT,final INT , value INT)")
+# c.execute("CREATE TABLE users(first_name TEXT,last_name TEXT, heigth INT, weigth INT,BMI INT , value INT)")
 # # tkMessageBox.showinfo("Information","Your details is save !")
 # conn.commit()
 # conn.close()
@@ -118,7 +127,7 @@ r=IntVar()
 title = Label(root,text="SEE YOUR BMI",background="red",font="time 10 bold")
 title.grid(row=2,column=1,pady=20,padx=20,columnspan=2)
 
-width =Label(root,text="Frist_name :",font="time 10 bold")
+width =Label(root,text="First_name :",font="time 10 bold")
 width.grid(row=3,column=1,padx=30,pady=5)
 fname = Entry(root,width=40)
 fname.grid(row=3,column=2)
@@ -143,7 +152,8 @@ btn =Button(root,text="Calculate",width=30,command=cal)
 btn.grid(row=9,column=1,columnspan=2)
 
 show =Button(root,text="Show",width=30,command=show)
-show.place(x=100, y=300)
+show.place(x=150, y=300)
+
 
 
 
