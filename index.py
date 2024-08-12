@@ -4,7 +4,7 @@ import sqlite3
 # import tkMessageBox
 
 def cal():
-    result=Label(root,text="")
+    result=Label(root,text="" ,width=80)
     result.grid(row=12,column=1,columnspan=3)
     frist = fname.get()
     last = lname.get()
@@ -45,7 +45,11 @@ def cal():
     conn.commit()
     conn.close()
     
-
+def reset():
+    for temp in root.winfo_children():
+        if isinstance(temp,Entry):
+            temp.delete(0,'end')
+    
 
     
 def show():
@@ -150,8 +154,10 @@ heigthentry.grid(row=6,column=2,pady=10)
 btn =Button(root,text="Calculate",width=30,command=cal)
 btn.grid(row=9,column=1)
 
-btn =Button(root,text="Calculate",width=30,command=reset)
+btn =Button(root,text="Reset",width=30,command=reset)
 btn.grid(row=9,column=2)
+
+
 
 show =Button(root,text="Show All Records",width=30,command=show)
 show.place(x=150, y=470)
